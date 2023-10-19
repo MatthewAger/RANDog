@@ -1,0 +1,146 @@
+require: rubocop-rails
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.2
+  Exclude:
+    - 'bin/**/*'
+    - 'coverage/**/*'
+    - 'db/neo4j/development/**/*'
+    - 'db/neo4j/test/**/*'
+    - 'lib/tasks/**/*'
+    - 'log/**/*'
+    - 'node_modules/**/*'
+    - 'public/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+
+Layout/BeginEndAlignment:
+  Enabled: false
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns: [ '(\A|\s)#' ] # Comments
+  Exclude:
+    - 'config/application.rb'
+    - 'config/environments/*.rb'
+    - 'config/initializers/*.rb'
+    - 'spec/**/*.rb'
+Layout/HashAlignment:
+  EnforcedHashRocketStyle:
+    - key
+    - table
+  EnforcedColonStyle:
+    - key
+    - table
+Layout/MultilineOperationIndentation:
+  Enabled: false
+Layout/TrailingEmptyLines:
+  Exclude:
+    - 'spec/fabricators/*'
+Layout/SpaceAroundOperators:
+  Enabled: false
+
+Lint/AmbiguousRegexpLiteral:
+  Exclude:
+    - 'spec/**/*.rb'
+Lint/EmptyBlock:
+  Exclude:
+    - 'spec/fabricators/**/*.rb'
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
+Lint/MissingSuper:
+  Enabled: false
+Lint/NoReturnInBeginEndBlocks:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 25
+  Exclude:
+    - 'lib/**/*'
+Metrics/BlockLength:
+  Max: 100
+  Exclude:
+    - 'config/initializers/*.rb'
+    - 'spec/**/*.rb'
+Metrics/ClassLength:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Max: 10
+  Exclude:
+    - 'lib/**/*'
+Metrics/MethodLength:
+  Max: 30
+  Exclude:
+    - 'db/migrate/**/*.rb'
+    - 'lib/**/*'
+Metrics/ModuleLength:
+  Max: 250
+Metrics/ParameterLists:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Max: 10
+  Exclude:
+    - 'lib/**/*'
+
+Naming/FileName:
+  Exclude:
+    - 'config/initializers/rack-cors.rb'
+Naming/VariableNumber:
+  Enabled: false
+
+Rails/ApplicationJob:
+  Exclude:
+    - 'app/jobs/**/*.rb'
+Rails/BulkChangeTable:
+  Enabled: false
+Rails/Blank:
+  UnlessPresent: false
+Rails/DuplicateAssociation:
+  Enabled: false
+Rails/FilePath:
+  EnforcedStyle: arguments
+Rails/FindEach:
+  Enabled: false
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+Rails/I18nLocaleTexts:
+  Enabled: false
+Rails/Pick:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'spec/**/*'
+    - 'app/jobs/**/*'
+    - 'app/webhooks/**/*'
+
+Style/AsciiComments:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/EachWithObject:
+  Enabled: false
+Style/HashAsLastArrayItem:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/Lambda:
+  Enabled: false
+Style/MultilineTernaryOperator:
+  Enabled: false
+Style/NumericLiteralPrefix:
+  Enabled: false
+Style/Send:
+  Enabled: true
+  Exclude:
+    - 'app/models/ability.rb'
+    - 'lib/**/*'
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+Style/TrailingCommaInHashLiteral:
+  Enabled: false

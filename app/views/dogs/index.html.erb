@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-sm-center align-items-sm-center vh-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 d-flex justify-content-center align-items-center py-4">
+        <%= form_with url: get_dog_path, method: :get, data: { turbo_stream: false } do |form| %>
+          <div class="form-group">
+            <%= form.label :breed, class: 'mr-2 mb-2' %>
+            <%= form.text_field :breed, class: "form-control mr-2 mb-4" %>
+            <%= submit_tag "Submit", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="position-relative col-12 col-sm-6 bg-light">
+        <%= turbo_frame_tag :dog do %>
+          <%= render 'dog', dog: %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='position-absolute bottom-0 w-100 d-flex justify-content-center align-items-center py-4'>
+  <h1 class='text-info'>RANDog</h1>
+</div>
