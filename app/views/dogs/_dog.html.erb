@@ -6,8 +6,8 @@
       <% end %>
     </div>
   <% elsif dog.url %>
-    <h1 class='position-absolute ms-2 mt-2 text-white'><%= params[:breed].capitalize %></h1>
-    <%= image_tag dog.url, alt: params[:breed], class: "img-fluid" %>
+    <h1 class='position-absolute bottom-0 text-white'><%= dog.search.reverse.join(' ').titleize %></h1>
+    <%= image_tag dog.url, alt: dog.breed, class: "img-fluid" %>
   <% else %>
     Enter a breed name to see a dog!
   <% end %>
